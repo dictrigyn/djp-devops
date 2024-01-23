@@ -90,7 +90,6 @@ data:
       ignore_invalid_headers off;
 
       location /dashboard {
-        rewrite ^/(.*) /$1 break;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Scheme $scheme;
