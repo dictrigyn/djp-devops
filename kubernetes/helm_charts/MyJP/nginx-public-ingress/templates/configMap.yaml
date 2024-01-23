@@ -89,7 +89,7 @@ data:
       proxy_set_header    X-Forwarded-Proto $scheme;
       ignore_invalid_headers off;
 
-      location / {
+      location /dashboard {
         rewrite ^/(.*) /$1 break;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
@@ -104,7 +104,7 @@ data:
         proxy_pass http://static-website-service:8080;
       }
 
-      location /dashboard {
+      location / {
         rewrite ^/(.*) /$1 break;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
